@@ -5,19 +5,11 @@
 	$err_uname="";
 	$pass="";
 	$err_pass="";
-	$gender="";
-	$err_gender="";
 	$email="";
 	$err_email="";
-	$hear=[];
-	$err_hobbies="";
-	$bio="";
-	$err_bio="";
 	$phone="";
 	$err_phone="";
-	$address="";
-	$err_address="";
-	$street=[];
+	$street="";
 	$err_street="";
 	$city="";
 	$err_city="";
@@ -25,6 +17,20 @@
 	$err_state="";
 	$zip="";
 	$err_zip="";
+	$day1 ="";
+	$err_day1="";
+	$month1 = "";
+	$err_month1="";
+	$year1 = "";
+	$err_year1="";
+	$gender="";
+	$err_gender="";
+	$hear=[];
+	$err_hear="";
+	$bio="";
+	$err_bio="";
+	
+	
 	
 	
 	$hasError=false;
@@ -47,43 +53,22 @@
 		
 		if(empty($_POST["name"])){
 			$err_name="Name Required";
-			$hasError = true;
 		}
 		else if(strlen($_POST["name"]) <=2){
 			$err_name="Name Must be greater than 2";
 			$hasError = true;
 		}
-		else{
+		else
+		{
 			$name=$_POST["name"];
 		}
-		if(empty($_POST["username"])){
-			$err_uname="Username Required";
+		if(empty($_POST["uname"])){
+			$err_uname="username Required";
 			$hasError = true;
 		}
-		
 		else{
 			$uname=$_POST["username"];
-		}
-		if(!isset($_POST["gender"])){
-			$err_gender="Gender Required";
-			$hasError = true;
-		}
-		else{
-			$gender = $_POST["gender"];
-		}
-		if(!isset($_POST["profession"])){
-			$err_prof = "Profession Required";
-			$hasError = true;
-		}
-		else{
-			$prof = $_POST["profession"];
-		}
-		if(!isset($_POST["hobbies"])){
-			$err_hobbies="Hobbies Required";
-			$hasError = true;
-		}
-		else{
-			$hobbies = $_POST["hobbies"];
+			
 		}
 		if(empty($_POST["bio"])){
 			$err_bio="Bio Required";
@@ -91,6 +76,7 @@
 		}
 		else{
 			$bio = $_POST["bio"];
+			
 		}
 		
 		if(!$hasError){
@@ -101,11 +87,34 @@
 			echo $_POST["profession"]."<br>";
 			echo $_POST["bio"]."<br>";
 			
-			$arr = $_POST["hobbies"];
+			$arr = $_POST["hear"];
 			
 			foreach($arr as $e){
 				echo "$e <br>";
 			}
+		}
+		else
+		{
+			echo $_POST["name"]."<br>";
+			echo $_POST["username"]."<br>";
+			echo $_POST["password"]."<br>";
+			echo $_POST["email"]."<br>";
+			echo $_POST["phone"]."<br>";
+			echo $_POST["state"]."<br>";
+			echo $_POST["city"]."<br>";
+			echo $_POST["street"]."<br>";
+			echo $_POST["zip"]."<br>";
+			echo $_POST["day"]."<br>";
+			echo $_POST["month1"]."<br>";
+			echo $_POST["year1"]."<br>";
+			echo $_POST["gender"]."<br>";
+			$arr = $_POST["hear"];
+			
+			foreach($arr as $e)
+			{
+				echo "$e <br>";
+			}
+			echo $_POST["bio"]."<br>";
 		}
 		
 		
@@ -162,7 +171,7 @@
 					<option selected disabled>Day</option>
 					<?php
 									foreach($day as $pf){
-										if($prof == $pf)
+										if($day1 == $pf)
 											echo "<option selected>$pf</option>";
 										else
 											echo "<option>$pf</option>";
@@ -173,7 +182,7 @@
 					<option selected disabled>Month</option>
 					<?php
 									foreach($month as $tf){
-										if($prof == $tf)
+										if($month1 == $tf)
 											echo "<option selected>$tf</option>";
 										else
 											echo "<option>$tf</option>";
@@ -184,7 +193,7 @@
 					<option selected disabled>Year</option>
 					<?php
 									foreach($year as $yf){
-										if($prof == $yf)
+										if($year1 == $yf)
 											echo "<option selected>$yf</option>";
 										else
 											echo "<option>$yf</option>";
@@ -197,7 +206,7 @@
 		<tr>
 			<td align="Right">Gender</td>
 				
-				<td><input type="radio" value="Male" <?php if($gender == "Male") echo "checked";?> name="gender"> Male <input <?php if($gender == "Female") echo "checked";?> name="gender"  value="Female" type="radio"> Female</td>
+				<td><input type="radio" value="Male" <?php if($gender = "Male") echo "checked";?> name="gender"> Male <input <?php if($gender = "Female") echo "checked";?> name="gender"  value="Female" type="radio"> Female</td>
 				<td><span><?php echo $err_gender;?></span></td>
 				
 		</tr>
