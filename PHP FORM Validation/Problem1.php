@@ -72,6 +72,8 @@
 		}
 		else if(strpos($_POST["username"]," ")){
 				$err_uname=" Space is not allowed in Username";
+			$hasError = true;
+
 		}
 		else if(strlen($_POST["username"]) <5){
 			$err_uname="User name Must be 6 greater than 6";
@@ -128,10 +130,14 @@
 			$err_email="Email required";
 			$hasError =true;
 		}
-		else if(!strpos($_POST["email"],"@"))
+		else if(!strpos($_POST["email"],"@")OR !strpos($_POST["email"],"."))
 		{
-			if(!strpos($_POST["email"],"."))
+			
 			$err_email="Email should contain '@' and '.'";
+			$hasError = true;
+			
+					
+
 		}
 		else
 		{
