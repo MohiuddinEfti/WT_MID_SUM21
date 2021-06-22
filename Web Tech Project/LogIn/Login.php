@@ -1,3 +1,12 @@
+<?php 
+		global $username;
+		global $password;
+		$user;
+		if($username=="user")
+		{
+			$user = "../HomePage.php";
+		}
+?>
 <html>
 	<body>
 	<fieldset><legend><h1>Ticket Management System</h1></legend>
@@ -8,7 +17,7 @@
 		Username
 		</td>
 		<td>
-			<input type="text">
+			<input type="text" name="username" value="<?php echo $username;?>" placeholder="User name">
 		</td>
 	</tr>
 	<tr>
@@ -16,7 +25,7 @@
 		Password
 		</td>
 		<td>
-			<input type="password">
+			<input type="password" name="password" value="<?php echo $password;?>" placeholder="Password">
 		</td>
 	</tr>
 	<tr>
@@ -26,12 +35,16 @@
 	</tr>
 	<tr>
 		<td colspan="2" align="center">
-			<input type="submit" value="Log In">
+			<a href="Create Account\Create Account.php">
+			Create Account
+			</a>
 		</td>
 	</tr>
 	<tr>
 		<td colspan="2" align="center">
-			<input type="submit" value="Create Account">
+			<a href=<?php echo $user; ?>>
+			Log In
+			</a>
 		</td>
 	</tr>
 	</table>	
