@@ -2,8 +2,8 @@
 
 
 <html>
-	<body><title>Train</title>
-	<fieldset><legend align="center"><h1>Train</h1></legend>
+	<body><title>Launch</title>
+	<fieldset><legend align="center"><h1>Launch</h1></legend>
 	<a href="..\HomePage.php">Go Back To Home</a>
 	<form action="" method="post">
 	<form border>
@@ -11,10 +11,10 @@
 	<table align = "center">
 	<tr>
 		<td>
-		Train Type
+		Launch Type
 		</td>
 		<td>
-		3rd Class
+		2nd Class
 		</td>
 	</tr>
 	<tr>
@@ -41,27 +41,26 @@
 		
 			101<br>
 			102<br>
-			103<br>
-			104<br>
-			
+			105<br>
+			106<br>
 		
 		
 		</td>
 	</tr>
 	<tr>
 		<td>
-		Train Found<br>
-		Select One Train
+		Launch Found<br>
+		Select One Launch
 		</td>
 		<td>
-					<input type="checkbox" value="Parabat Express">Parabat Express<br>
-					<input type="checkbox" value="Upakul Express">Upakul Express<br>
+					<input type="checkbox" value="BNS Aparajeya (P261)">BNS Aparajeya (P261)<br>
+					<input type="checkbox" value="BNS Adamya (P262)">BNS Adamya (P262)<br>
 		</td>
 	</tr>
 	
 	<tr>
 		<td colspan="2" align="center">
-			<h1>Tk 1500</h1>
+			<h1>Tk 9000</h1>
 		</td>
 	</tr>
 	<tr>

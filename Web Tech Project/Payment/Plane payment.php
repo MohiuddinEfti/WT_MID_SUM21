@@ -2,8 +2,8 @@
 
 
 <html>
-	<body><title>Train</title>
-	<fieldset><legend align="center"><h1>Train</h1></legend>
+	<body><title>Plane</title>
+	<fieldset><legend align="center"><h1>Plane</h1></legend>
 	<a href="..\HomePage.php">Go Back To Home</a>
 	<form action="" method="post">
 	<form border>
@@ -11,10 +11,10 @@
 	<table align = "center">
 	<tr>
 		<td>
-		Train Type
+		Plane Type
 		</td>
 		<td>
-		3rd Class
+		1st Class
 		</td>
 	</tr>
 	<tr>
@@ -41,8 +41,6 @@
 		
 			101<br>
 			102<br>
-			103<br>
-			104<br>
 			
 		
 		
@@ -50,18 +48,18 @@
 	</tr>
 	<tr>
 		<td>
-		Train Found<br>
-		Select One Train
+		Plane Found<br>
+		Select One Plane
 		</td>
 		<td>
-					<input type="checkbox" value="Parabat Express">Parabat Express<br>
-					<input type="checkbox" value="Upakul Express">Upakul Express<br>
+					<input type="checkbox" value="Boeing 737">Boeing 737<br>
+					<input type="checkbox" value="Boeing 747(P262)">Boeing 747<br>
 		</td>
 	</tr>
 	
 	<tr>
 		<td colspan="2" align="center">
-			<h1>Tk 1500</h1>
+			<h1>Tk 50000</h1>
 		</td>
 	</tr>
 	<tr>

@@ -1,23 +1,15 @@
-<?php 
-		global $username;
-		global $password;
-		$user;
-		if($username=="user")
-		{
-			$user = "../HomePage.php";
-		}
-?>
+
 <html>
 	<body>
-	<fieldset><legend><h1>Ticket Management System</h1></legend>
-	<form border>
+	<fieldset><legend><h1>Log In</h1></legend>
+	<form action="LoginUs.php" method="get">
 	<table align = "Right">
 	<tr>
 		<td>
 		Username
 		</td>
 		<td>
-			<input type="text" name="username" value="<?php echo $username;?>" placeholder="User name">
+			<input type="text" name="username"  placeholder="User name">
 		</td>
 	</tr>
 	<tr>
@@ -25,7 +17,7 @@
 		Password
 		</td>
 		<td>
-			<input type="password" name="password" value="<?php echo $password;?>" placeholder="Password">
+			<input type="password" placeholder="Password">
 		</td>
 	</tr>
 	<tr>
@@ -42,9 +34,7 @@
 	</tr>
 	<tr>
 		<td colspan="2" align="center">
-			<a href=<?php echo $user; ?>>
-			Log In
-			</a>
+			<input type="submit" value="Log In">
 		</td>
 	</tr>
 	</table>	
