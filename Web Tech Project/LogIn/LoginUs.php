@@ -12,8 +12,12 @@
 		}
 		else if($udata=="Admin")
 		{
-			$udata="../Admin.php";
+			$udata="../Admin/Admin.php";
 			
+		}
+		else
+		{
+			$udata="../HomePage.php";
 		}
 		?>
 		<fieldset><h1 align="center"><a href="<?php echo $udata;?>">Log In</a></fieldset></h1>

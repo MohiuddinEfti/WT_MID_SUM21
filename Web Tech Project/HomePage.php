@@ -1,7 +1,9 @@
 <html>
 	<body>
+	
 	<fieldset>
-	<h1>Ticket Management System</h1>
+	
+	<legend><h1>Ticket Management System</h1></legend>
 	<h3 align="Right"><a target="" href="Login/login.php"> Log In </a></h3>
 	<h1 align="center">HOME</h1>
 	<h2 align="center">Book Ticket</h2>
@@ -19,6 +21,7 @@
 	</tr>
 	</table>	
 	</fieldset>
+	
 	</body>
 
 </html>
