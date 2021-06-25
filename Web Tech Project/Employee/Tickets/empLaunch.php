@@ -4,7 +4,7 @@
 <html>
 	<body><title>Launch</title>
 	<fieldset><legend align="center"><h1>Launch</h1></legend>
-	<a href="..\Employee\Employee.php">Go Back</a>
+	<a href="..\Employee.php">Go Back</a>
 	<form action="" method="post">
 	<form border>
 	<fieldset>

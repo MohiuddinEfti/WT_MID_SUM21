@@ -2,7 +2,7 @@
 	<body>
 	<fieldset>
 	<legend align="center"><h1>Availability</h1></legend>
-	<a href="..\Employee\Employee.php">Go Back</a>
+		<a href="..\Employee.php">Go Back</a>
 	
 	
 	<h2 align="center">booking</h2>

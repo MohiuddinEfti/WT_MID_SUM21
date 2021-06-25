@@ -1,7 +1,7 @@
 <html>
 	<body>
 	<fieldset><legend align="center"><h1>Bus booking</h1></legend>
-	<a href="..\Employee\Employee.php">Go Back</a>
+	<a href="..\Employee.php">Go Back</a>>
 	<form>
 		<table align="center" border="1">
 			<tr>
