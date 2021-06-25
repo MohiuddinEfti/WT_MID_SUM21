@@ -6,13 +6,18 @@
 		
 		$udata=$_GET["username"];
 	
-		if($udata=="user"OR$udata=="")
+		if($udata=="user"OR$udata==""OR$udata=="User")
 		{
 			$udata="../HomePage.php";
 		}
-		else if($udata=="Admin")
+		else if($udata=="Admin"OR$udata=="admin")
 		{
 			$udata="../Admin/Admin.php";
+			
+		}
+		else if($udata=="Employee"OR$udata=="employee")
+		{
+			$udata="../Employee/Employee.php";
 			
 		}
 		else

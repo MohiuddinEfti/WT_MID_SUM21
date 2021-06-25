@@ -2,7 +2,7 @@
 	<body>
 	<fieldset>
 	<legend align="center"><h1>Welcome Admin</h1></legend>
-	<a href="..\HomePage.php">Go Back To Home</a>
+	<a href="..\HomePage.php">Log Out</a>
 	
 	
 	
