@@ -14,6 +14,8 @@
 	$nameofplanes=[];
 	$err_nameofplanes="";
 	
+	$num="";
+	$err_num="";
 	
 	
 	
@@ -73,6 +75,13 @@
 			$nameofplanes = $_POST["nameofplanes"];
 		}
 		
+		
+		if(!is_numeric($_POST["num"]))
+		{
+			$err_num="ID should be numeric * ";
+		}
+		else $num=$_POST["num"];
+		
 
 		
 		if(!$hasError){
@@ -89,6 +98,8 @@
 			foreach($arr as $e){
 				echo "$e <br>";
 			}
+			echo $_POST["num"]."<br>";
+
 
 		}
 		
@@ -162,16 +173,14 @@
 					</tr>
 					
 					<tr>
-					<td>
-					HelpLine number
-					</td>
-					<td>
-					<input type="text" placeholder="HelpLine Number(optional)">
-
-					</td>
+					<td><span>Pilot's Id</span></td>
+					<td><input type="text" name="num" value="<?php echo $num;?>" placeholder = "Id" size="10"> </td><td><span><?php echo $err_num;?></span></td>
 					</tr>
 					<tr>
-						<td align="right" colspan="2"><input type="submit" value="Search"></td>
+					<td colspan="3" align="center">
+						<input type="submit" name="Search" value="Search">
+						<input type="reset" name="reset" value="Reset">
+					</td>
 					</tr>
 					
 					

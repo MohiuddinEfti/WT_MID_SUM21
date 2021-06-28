@@ -4,18 +4,19 @@
 	<fieldset><legend><h1>Log In Page</h1></legend>
 		<?php 
 		
-		$udata=$_GET["username"];
+		$udata=$_POST["username"];
+		$upass=$_POST["password"];
 	
 		if($udata=="user"OR$udata==""OR$udata=="User")
 		{
 			$udata="../HomePage.php";
 		}
-		else if($udata=="Admin"OR$udata=="admin")
+		else if($udata=="Admin"&&$upass=="Admin"OR$udata=="admin"&&$upass=="admin")
 		{
 			$udata="../Admin/Admin.php";
 			
 		}
-		else if($udata=="Employee"OR$udata=="employee")
+		else if($udata=="Employee"&&$upass=="Employee"OR$udata=="employee"&&$upass=="employee")
 		{
 			$udata="../Employee/Employee.php";
 			
