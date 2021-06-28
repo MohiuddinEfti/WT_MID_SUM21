@@ -1,22 +1,31 @@
 <?php
 	$name="";
 	$err_name="";
+	
 	$Lname="";
 	$err_Lname="";
+	
 	$uname="";
 	$err_uname="";
+	
 	$gender="";
 	$err_gender="";
+	
 	$email="";
 	$err_email="";
+	
 	$number="";
 	$err_number="";
+	
 	$address="";
 	$err_address="";
+	
 	$pass="";
 	$err_pass="";
+	
 	$cpass="";
 	$err_cpass="";
+	
     $err=false;
 
     if($_SERVER["REQUEST_METHOD"] == "POST")
