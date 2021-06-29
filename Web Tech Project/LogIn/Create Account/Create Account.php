@@ -27,6 +27,11 @@
 			$err_name="First Name Required";
 			$err=true;
 		}
+		else if(is_numeric($_POST["name"]))
+		{
+			$err_name="Numeric value is not allowed.";
+			$err=true;
+		}
 		else
 		{
 			$name=$_POST["name"];
@@ -35,12 +40,22 @@
 			$err_Lname="Last Name Required";
 			$err = true;
 		}
+		else if(is_numeric($_POST["lastname"]))
+		{
+			$err_Lname="Numeric value is not allowed.";
+			$err=true;
+		}
 		else
 		{
 			$lname=$_POST["lastname"];
 		}
 		if($_POST["username"]==""){
 			$err_uname="Username Required";
+			$err=true;
+		}
+		else if(is_numeric($_POST["username"]))
+		{
+			$err_uname="Numeric value is not allowed.";
 			$err=true;
 		}
 		else
@@ -61,6 +76,11 @@
 			$err_email="Email required";
 			$err =true;
 		}
+		else if(is_numeric($_POST["email"]))
+		{
+			$err_email="Numeric value is not allowed.";
+			$err =true;
+		}
 		else if(!strpos($_POST["email"],"@")OR !strpos($_POST["email"],"."))
 		{
 			
@@ -76,7 +96,11 @@
 			$err_number="Phone Number is required";
 			$err = true;
 		}
-		
+		else if(!is_numeric($_POST["number"]))
+		{
+			$err_number="Non Numeric value is not allowed.";
+			$err = true;
+		}
 		else
 		{
 			$number = $_POST["number"];

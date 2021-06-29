@@ -1,6 +1,6 @@
 <html>
 	<body>
-	
+	<img width="2370px"src="homeup.PNG"></img>
 	<fieldset>
 	
 	<legend><h1>Ticket Management System</h1></legend>
@@ -19,9 +19,34 @@
 			<fieldset><a target="" href="Tickets/Train ticket.php">  Train  </a></fieldset>
 		</td>
 	</tr>
-	</table>	
-	</fieldset>
 	
+	</table>
+		
+	</fieldset>
+	<img width="2370px"src="homedown1.PNG"></img>
+	<table>
+		<tr >
+		<a target="" href="Tickets/Bus ticket.php">
+			<img src="bus.PNG"></img>
+		 </a>
+			
+		</tr>
+		<tr >
+			<a target="" href="Tickets/Plane ticket.php"> 
+			<img src="plane.PNG"></img>
+			 </a>
+		</tr>
+		<tr >
+			<a target="" href="Tickets/Launch ticket.php">  
+			<img src="launch.PNG"></img>
+			 </a>
+		</tr>
+		<tr >
+			<a target="" href="Tickets/Train ticket.php">  
+			<img src="train.PNG"></img>
+			</a>
+		</tr>
+	</table>
 	</body>
 
 </html>

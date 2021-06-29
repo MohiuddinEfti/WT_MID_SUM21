@@ -1,4 +1,8 @@
 <?php
+$name="";
+$errorname="";
+$num="";
+$err_num="";
 $planetype="";
 $errorplane="";
 $departure="";
@@ -27,6 +31,17 @@ function planeExist($planee){
 	}
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
+	if(empty($_POST["name"])){
+			$errorname="Name Required";
+			$err = true;
+		}
+		else if(strlen($_POST["name"]) <=2){
+			$errorname="Name Must be greater than 2";
+			$err = true;
+		}
+		else{
+			$name=$_POST["name"];
+		}
 	if (!isset($_POST["planetype"])){
 			
 				$errorplane="Select type";
@@ -78,17 +93,32 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		else{
 			$plane=$_POST["plane"];
 		}
+		if(!is_numeric($_POST["num"]))
+			{
+				$err_num="Number should be numeric <br>";
+				$err = true;
+			}
+			else if(strlen($_POST["num"]) <=10){
+			$err_num="Name Must be greater or equal to 10";
+			$err = true;
+		}
+			else {$num=$_POST["num"];
+			}
 		
 		
 		
 		if(!$err){
-			echo $_POST["planetype"]."<br>";
-			echo $_POST["departure"]."<br>";
-			echo $_POST["arrival"]."<br>";
-			echo $_POST["noseat"]."<br>";
+			echo "Name: ".htmlspecialchars($_POST["name"])."<br>";
+			echo "Plane Type: ".htmlspecialchars($_POST["planetype"])."<br>";
+			echo "Departure Time: ".htmlspecialchars($_POST["departure"])."<br>";
+			echo "Arrival Time: ".htmlspecialchars($_POST["arrival"])."<br>";
+			echo "Number of Seat: ".htmlspecialchars($_POST["noseat"])."<br>";
+			echo "Extra Weight? : ".htmlspecialchars($_POST["exwe"])."<br>";
+			echo "Phone Number: ".htmlspecialchars($_POST["num"])."<br>";
 			$arr = $_POST["plane"];
 			
 			foreach($arr as $e){
+				echo "Your Desired Plane: ";
 				echo "$e <br>";
 			}
 		}
@@ -108,6 +138,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	<form border>
 	<fieldset>
 	<table align = "center">
+	<tr>
+						<td>Name: </td>
+						<td><input type="text" name="name" value="<?php echo $name;?>" placeholder="Name"></td>
+						<td><span><?php echo $errorname;?></span></td>
+						
+					</tr>
+	
+	<tr>
 	
 		<td>
 		Plane Type
@@ -194,6 +232,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 						<td><input type="radio" value="Yes" <?php if($exwe == "Yes") echo "checked";?> name="exwe"> Yes <input <?php if($exwe == "No") echo "checked";?> name="exwe"  value="No" type="radio"> No</td>
 						<td><span><?php echo $errorexwe;?></span></td>
 					</tr>
+					<tr>
+					<td><span>Phone</span></td>
+					<td><input type="text" name="num" value="<?php echo $num;?>" placeholder = "Number" size="10"> </td><td><span><?php echo $err_num;?></span></td>
+				</tr>
 	<tr>
 		<td>
 		Your Desire Plane

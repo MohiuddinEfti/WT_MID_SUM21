@@ -1,7 +1,8 @@
 
 <html>
 	<body>
-	<fieldset><legend><h1>Log In</h1></legend>
+	<img width ="2370px"src="log1.jpg"></img>
+	<fieldset><h1>Log In</h1>
 	<form action="LoginUs.php" method="POST">
 	<table align = "Right">
 	<tr>
@@ -42,6 +43,7 @@
 	</table>	
 	<form>
 	</fieldset>
+	<img width ="2370px"src="log.jpg"></img>
 	</body>
 
 </html>

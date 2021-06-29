@@ -1,4 +1,8 @@
 <?php
+$name="";
+$errorname="";
+$num="";
+$err_num="";
 $traintype="";
 $errortrain="";
 $departure="";
@@ -26,6 +30,17 @@ function trainExist($trainn){
 	}
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
+	if(empty($_POST["name"])){
+			$errorname="Name Required";
+			$err = true;
+		}
+		else if(strlen($_POST["name"]) <=2){
+			$errorname="Name Must be greater than 2";
+			$err = true;
+		}
+		else{
+			$name=$_POST["name"];
+		}
 	if (!isset($_POST["traintype"])){
 			
 				$errortrain="Select type";
@@ -77,17 +92,32 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		else{
 			$train=$_POST["train"];
 		}
+		if(!is_numeric($_POST["num"]))
+			{
+				$err_num="Number should be numeric <br>";
+				$err = true;
+			}
+			else if(strlen($_POST["num"]) <=10){
+			$err_num="Name Must be greater or equal to 10";
+			$err = true;
+		}
+			else {$num=$_POST["num"];
+			}
 		
 		
 		
 		if(!$err){
-			echo $_POST["traintype"]."<br>";
-			echo $_POST["departure"]."<br>";
-			echo $_POST["arrival"]."<br>";
-			echo $_POST["noseat"]."<br>";
+			echo "Name: ".htmlspecialchars($_POST["name"])."<br>";
+			echo "Train Type: ".htmlspecialchars($_POST["traintype"])."<br>";
+			echo "Departure Time: ".htmlspecialchars($_POST["departure"])."<br>";
+			echo "Arrival Time: ".htmlspecialchars($_POST["arrival"])."<br>";
+			echo "Number of Seat: ".htmlspecialchars($_POST["noseat"])."<br>";
+			echo "Seat Type : ".htmlspecialchars($_POST["seatt"])."<br>";
+			echo "Phone Number: ".htmlspecialchars($_POST["num"])."<br>";
 			$arr = $_POST["train"];
 			
 			foreach($arr as $e){
+				echo "Your Desired Train: ";
 				echo "$e <br>";
 			}
 		}
@@ -107,6 +137,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	<form border>
 	<fieldset>
 	<table align = "center">
+	<tr>
+						<td>Name: </td>
+						<td><input type="text" name="name" value="<?php echo $name;?>" placeholder="Name"></td>
+						<td><span><?php echo $errorname;?></span></td>
+						
+					</tr>
 	
 	<tr>
 		<td>
@@ -193,6 +229,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 						<td><input type="radio" value="Cabin" <?php if($seatt == "Cabin") echo "checked";?> name="seatt"> Cabin <input <?php if($seatt == "Chair Coach") echo "checked";?> name="seatt"  value="Chair Coach" type="radio"> Chair Coach</td>
 						<td><span><?php echo $errorseatt;?></span></td>
 					</tr>
+					<tr>
+					<td><span>Phone</span></td>
+					<td><input type="text" name="num" value="<?php echo $num;?>" placeholder = "Number" size="10"> </td><td><span><?php echo $err_num;?></span></td>
+				</tr>
 	<tr>
 		<td>
 		Your desired Train

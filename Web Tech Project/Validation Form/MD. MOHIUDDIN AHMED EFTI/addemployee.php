@@ -35,6 +35,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			$err_name="Name Required.";
 			$err=true;
 		}
+		else if(is_numeric($_POST["name"]))
+		{
+			$err_name="Numeric value is not allowed.";
+			$err=true;
+		}
 		else
 		{
 			$name=$_POST["name"];
@@ -44,7 +49,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			$err_number="Employee ID is Required.";
 			$err = true;
 		}
-		
+		else if(!is_numeric($_POST["number"]))
+		{
+			$err_number="Non Numeric value is not allowed.";
+			$err = true;
+		}
 		else
 		{
 			$number = $_POST["number"];
@@ -52,6 +61,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		if($_POST["email"]=="")
 		{
 			$err_email="Email required";
+			$err =true;
+		}
+		else if(is_numeric($_POST["email"]))
+		{
+			$err_email="Numeric value is not allowed.";
 			$err =true;
 		}
 		else if(!strpos($_POST["email"],"@")OR !strpos($_POST["email"],"."))
@@ -67,6 +81,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		if($_POST["pnumber"]=="")
 		{
 			$err_pnumber="Phone Number is Required.";
+			$err = true;
+		}
+		else if(!is_numeric($_POST["pnumber"]))
+		{
+			$err_pnumber="Non Numeric value is not allowed.";
 			$err = true;
 		}
 		else
@@ -125,6 +144,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		if($_POST["Sal"]=="")
 		{
 			$err_Sal="Salary Required.";
+			$err=true;
+		}
+		else if(!is_numeric($_POST["Sal"]))
+		{
+			$err_Sal="Non Numeric value is not allowed";
 			$err=true;
 		}
 		else{

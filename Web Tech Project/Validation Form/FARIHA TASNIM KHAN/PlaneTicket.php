@@ -1,6 +1,9 @@
 <?php
 $fromcity="";
 $err_fromcity="";
+
+$fromcountry="";
+$err_fromcountry="";
 $tocity="";
 $err_tocity="";
 
@@ -25,6 +28,13 @@ if(empty($_POST["fromcity"])){
 		}
 		else{
 			$fromcity=$_POST["fromcity"];
+		}
+if(empty($_POST["fromcountry"])){
+			$err_fromcountry="Please choose a Country.";
+			$err = true;
+		}
+		else{
+			$fromcountry=$_POST["fromcountry"];
 		}
 
 if(empty($_POST["tocity"])){
@@ -85,7 +95,14 @@ if(empty($_POST["tocity"])){
 	<form border>
 	<fieldset>
 	<table align = "center">
-	
+	<tr>
+		<td>
+		Country:
+		</td>
+		<td>
+		<input type="text" placeholder="Enter City" name="fromcountry" value="<?php echo $fromcountry;?>"></td><td><span><?php echo $err_fromcountry;?></span>
+		</td>
+	</tr>
 	<tr>
 		<td>
 		From
